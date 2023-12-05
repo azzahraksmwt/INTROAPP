@@ -1,0 +1,1117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".masterdataLecturer">
+
+    <LinearLayout
+        android:id="@+id/menu"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#394360"
+        tools:ignore="MissingConstraints">
+
+        <ImageButton
+            android:id="@+id/logo"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:background="#00FFFFFF"
+            android:src="@drawable/logo"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <ImageButton
+            android:id="@+id/menudashboard"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            android:background="#00FFFFFF"
+            android:src="@drawable/home"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <ImageButton
+            android:id="@+id/menumasterdata"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:background="#00FFFFFF"
+            android:src="@drawable/masterdata"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <ImageButton
+            android:id="@+id/menupemakaian"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:background="#00FFFFFF"
+            android:src="@drawable/inboxout"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <ImageButton
+            android:id="@+id/menupengembalian"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:background="#00FFFFFF"
+            android:src="@drawable/inboxout"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <ImageButton
+            android:id="@+id/menulaporan"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:background="#00FFFFFF"
+            android:src="@drawable/laporan"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="32dp"
+        android:background="#394360"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toEndOf="@+id/menu"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:text="Lecturer Data"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnadd"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="70dp"
+            android:text="+ Add"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="300dp"
+        android:layout_height="600dp"
+        android:background="#408A8C90"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toEndOf="@+id/menu"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/srl_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="MissingConstraints">
+
+
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="45dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginHorizontal="20dp">
+
+                    <TableRow android:background="#394360">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Lecturer ID"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Lecturer Name"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Username"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Password"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Action"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+                    </TableRow>
+
+                    <TableRow android:background="#FFFFFF">
+
+                        <TextView
+                            android:id="@+id/v_iddosen"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Lecturer ID"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_namadosen"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Lecturer Name"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_username"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Username"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_password"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Password"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:drawableStart="@drawable/edit"
+                            android:drawableEnd="@drawable/delete"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                    </TableRow>
+
+                    <TableRow android:background="#80FFFFFF">
+
+                        <TextView
+                            android:id="@+id/v_iddosen2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Lecturer ID"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_namadosen2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Lecturer Name"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_username2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Username"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_password2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Password"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:drawableStart="@drawable/edit"
+                            android:drawableEnd="@drawable/delete"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                    </TableRow>
+
+                    <TableRow android:background="#FFFFFF">
+
+                        <TextView
+                            android:id="@+id/v_iddosen3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Lecturer ID"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_namadosen3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Lecturer Name"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_username3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Username"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_password3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Password"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:drawableStart="@drawable/edit"
+                            android:drawableEnd="@drawable/delete"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                    </TableRow>
+
+                    <TableRow android:background="#80FFFFFF">
+
+                        <TextView
+                            android:id="@+id/v_iddosen4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Lecturer ID"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_namadosen4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Lecturer Name"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_username4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Username"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_password4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Password"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:drawableStart="@drawable/edit"
+                            android:drawableEnd="@drawable/delete"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                    </TableRow>
+
+                    <TableRow android:background="#FFFFFF">
+
+                        <TextView
+                            android:id="@+id/v_iddosen5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Lecturer ID"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_namadosen5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Lecturer Name"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_username5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Username"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_password5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Password"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:drawableStart="@drawable/edit"
+                            android:drawableEnd="@drawable/delete"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                    </TableRow>
+
+                    <TableRow android:background="#80FFFFFF">
+
+                        <TextView
+                            android:id="@+id/v_iddosen6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Lecturer ID"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_namadosen6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Lecturer Name"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_username6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Username"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_password6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Password"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:drawableStart="@drawable/edit"
+                            android:drawableEnd="@drawable/delete"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                    </TableRow>
+
+                    <TableRow android:background="#FFFFFF">
+
+                        <TextView
+                            android:id="@+id/v_iddosen7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Lecturer ID"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_namadosen7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Lecturer Name"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_username7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Username"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_password7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Password"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:drawableStart="@drawable/edit"
+                            android:drawableEnd="@drawable/delete"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                    </TableRow>
+
+                    <TableRow android:background="#80FFFFFF">
+
+                        <TextView
+                            android:id="@+id/v_iddosen8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Lecturer ID"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_namadosen8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Lecturer Name"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_username8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Username"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_password8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Password"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:drawableStart="@drawable/edit"
+                            android:drawableEnd="@drawable/delete"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                    </TableRow>
+
+                    <TableRow android:background="#FFFFFF">
+
+                        <TextView
+                            android:id="@+id/v_iddosen9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Lecturer ID"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_namadosen9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Lecturer Name"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_username9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Username"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_password9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Password"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:drawableStart="@drawable/edit"
+                            android:drawableEnd="@drawable/delete"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                    </TableRow>
+
+                    <TableRow android:background="#80FFFFFF">
+
+                        <TextView
+                            android:id="@+id/v_iddosen10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Lecturer ID"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_namadosen10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Lecturer Name"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_username10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Username"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_password10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Password"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:drawableStart="@drawable/edit"
+                            android:drawableEnd="@drawable/delete"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                    </TableRow>
+
+                    <TableRow android:background="#FFFFFF">
+
+                        <TextView
+                            android:id="@+id/v_iddosen11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Lecturer ID"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_namadosen11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Lecturer Name"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_username11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Username"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_password11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Password"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:drawableStart="@drawable/edit"
+                            android:drawableEnd="@drawable/delete"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                    </TableRow>
+
+                    <TableRow android:background="#80FFFFFF">
+
+                        <TextView
+                            android:id="@+id/v_iddosen12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Lecturer ID"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_namadosen12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Lecturer Name"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_username12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Username"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_password12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Password"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:drawableStart="@drawable/edit"
+                            android:drawableEnd="@drawable/delete"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                    </TableRow>
+
+                    <TableRow android:background="#FFFFFF">
+
+                        <TextView
+                            android:id="@+id/v_iddosen13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Lecturer ID"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_namadosen13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Lecturer Name"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_username13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Username"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_password13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Password"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:drawableStart="@drawable/edit"
+                            android:drawableEnd="@drawable/delete"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                    </TableRow>
+
+                    <TableRow android:background="#80FFFFFF">
+
+                        <TextView
+                            android:id="@+id/v_iddosen14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Lecturer ID"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_namadosen14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Lecturer Name"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_username14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Username"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_password14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Password"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:drawableStart="@drawable/edit"
+                            android:drawableEnd="@drawable/delete"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                    </TableRow>
+
+                    <TableRow android:background="#FFFFFF">
+
+                        <TextView
+                            android:id="@+id/v_iddosen15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Lecturer ID"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_namadosen15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Lecturer Name"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_username15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Username"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_password15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Password"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:drawableStart="@drawable/edit"
+                            android:drawableEnd="@drawable/delete"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                    </TableRow>
+
+                    <TableRow android:background="#80FFFFFF">
+
+                        <TextView
+                            android:id="@+id/v_iddosen16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Lecturer ID"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_namadosen16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Lecturer Name"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_username16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Username"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/v_password16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Password"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:drawableStart="@drawable/edit"
+                            android:drawableEnd="@drawable/delete"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                    </TableRow>
+                </TableLayout>
+
+            </HorizontalScrollView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"/>
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
